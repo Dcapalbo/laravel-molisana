@@ -165,30 +165,27 @@ $data = '[
     </nav>
    </header>
    <main>
-     <h2>Le lunghe</h2>
-     <ul>
+     <ul class="wrapper_products">
+      <span class="product_text">Le lunghe</span>
       @foreach ($lunga as $products)
       <li>
        <img src="{{$products["src"]}}" alt="">
-       <h3>{{$products["titolo"]}}</h3>
       </li>
       @endforeach
      </ul>
-     <h2>Le corte</h2>
-     <ul>
+     {{-- <h2>Le corte</h2> --}}
+     <ul class="wrapper_products">
        @foreach ($corta as $products)
        <li>
         <img src="{{$products["src"]}}" alt="">
-        <h3>{{$products["titolo"]}}</h3>
        </li>
        @endforeach
      </ul>
-     <h2>Le cortissime</h2>
-     <ul>
+     {{-- <h2>Le cortissime</h2> --}}
+     <ul class="wrapper_products">
        @foreach ($cortissima as $products)
        <li>
         <img src="{{$products["src"]}}" alt="">
-         <h3>{{$products["titolo"]}}</h3>
        </li>
        @endforeach
      </ul>

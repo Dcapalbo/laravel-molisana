@@ -1,1 +1,17 @@
 // mixin
+@mixin wrapper_products {
+  width: 100%;
+  margin: auto;
+}
+
+@mixin DisplayFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin BackgroundImage {
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}

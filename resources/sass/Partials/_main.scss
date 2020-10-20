@@ -1,0 +1,32 @@
+//main
+main {
+  @include BackgroundImage;
+}
+.wrapper_products {
+  @include wrapper_products;
+  position: relative;
+  margin-top: 10px;
+  li {
+    width: 25%;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    img {
+      width: 100%;
+      &:hover {
+        transition: 1.2s;
+        background-color: lightblue;
+        opacity: 0.5;
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.product_text {
+  position: absolute;
+  top: 0;
+  text-transform: capitalize;
+  font-size: 30px;
+  transform: translateY(-100%);
+}
