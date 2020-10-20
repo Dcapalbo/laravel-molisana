@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: red;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -21,4 +20,7 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  img {
+    width: 25%;
+  }
 }

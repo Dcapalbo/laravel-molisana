@@ -155,10 +155,17 @@ $data = '[
   </head>
   <body>
    <header>
-    <img class="logo" src="{{asset('/images/logo_la_molisana.png')}}" alt="logo_la_molisana">
+    <div class="logo">
+     <img src="{{asset('/images/logo_la_molisana.png')}}" alt="logo_la_molisana">
+    </div>
+    <nav class="header-nav">
+     <li><a href="#"></a>Home</li>
+     <li><a href="#"></a>Prodotti</li>
+     <li><a href="#"></a>News</li>
+    </nav>
    </header>
    <main>
-     <h2>Lunga</h2>
+     <h2>Le lunghe</h2>
      <ul>
       @foreach ($lunga as $products)
       <li>
@@ -167,7 +174,7 @@ $data = '[
       </li>
       @endforeach
      </ul>
-     <h2>Corta</h2>
+     <h2>Le corte</h2>
      <ul>
        @foreach ($corta as $products)
        <li>
@@ -176,12 +183,12 @@ $data = '[
        </li>
        @endforeach
      </ul>
-     <h2>Cortissima</h2>
+     <h2>Le cortissime</h2>
      <ul>
        @foreach ($cortissima as $products)
        <li>
         <img src="{{$products["src"]}}" alt="">
-        <h3>{{$products["titolo"]}}</h3>
+         <h3>{{$products["titolo"]}}</h3>
        </li>
        @endforeach
      </ul>
