@@ -1,6 +1,7 @@
 //main
 main {
   @include BackgroundImage;
+  background-image: url(/images/fondo-pag-speciali.jpg);
 }
 .wrapper_products {
   @include wrapper_products;
