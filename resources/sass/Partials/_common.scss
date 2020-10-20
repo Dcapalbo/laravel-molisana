@@ -4,17 +4,14 @@
   padding: 0px;
   margin: 0px;
 }
-
-span {
+h2 {
   font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 30px;
+  color: #008B8B;
 }
 li {
   list-style: none;
-  font-family: 'Roboto', sans-serif;
-}
-
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
 }

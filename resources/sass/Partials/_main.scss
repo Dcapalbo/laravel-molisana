@@ -2,32 +2,50 @@
 main {
   @include BackgroundImage;
   background-image: url(/images/fondo-pag-speciali.jpg);
+  margin-bottom: 80px;
 }
-.wrapper_products {
-  @include wrapper_products;
-  position: relative;
-  margin-top: 10px;
+.main_wrapper {
+  @include wrapper;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   li {
-    width: 25%;
+    @include DisplayFlex;
+    flex-direction: column;
+    width: 30%;
     text-align: center;
+    position: relative;
+    transition: 1.2s;
     margin: 10px;
     padding: 5px;
-    img {
+    .food_logo {
+      width: 100px;
+      height: 30px;
+      margin-top: 100px;
+      position: absolute;
+      opacity:0;
+      transition: 1.2s;
+    }
+    p {
+      margin-top: 150px;
+      position: absolute;
+      padding-top: 10px;
+      opacity:0;
+      transition: 1.2s;
+    }
+    img:first-child {
       width: 100%;
-      &:hover {
-        transition: 1.2s;
-        background-color: lightblue;
-        opacity: 0.5;
-        transform: scale(1.05);
-        cursor: pointer;
-      }
+    }
+    &:hover {
+      background-color: lightblue;
+      opacity: 0.8;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+    &:hover p, &:hover .food_logo {
+      opacity: 1;
     }
   }
-}
-.product_text {
-  position: absolute;
-  top: 0;
-  text-transform: capitalize;
-  font-size: 30px;
-  transform: translateY(-100%);
 }

@@ -1,5 +1,6 @@
 @php
-
+// starting blade
+// insert the json array
 $data = '[
  {
    "src": "https://www.lamolisana.it/wp-content/uploads/2017/06/4-spaghetto-quadrato-bucato-m.jpg",
@@ -122,25 +123,26 @@ $data = '[
    "descrizione": "Altro elemento cult della famiglia de lo Spaghetto Quadrato (N.1 Spaghetto Quadrato. Una new entry che sarà molto apprezzata sia dai consumatori che dagli chef, perché il Ditale Quadrato è un formato deliziosamente piccolo ma sostanzioso.<br>A dispetto del nome che fa pensare ad una pastina è un formato di pasta assolutamente versatile, adatto a moltissime ricette di primi piatti.<br>La sua consistenza soda si sprigiona in bocca con un\'esplosione di emozioni, grazie agli spessori corposi, al colore elegantemente ambrato, alla texture delicatamente ruvida, cangiante e piacevolissima al tatto che trattiene il condimento sulla superficie.<br>Il Ditale Quadrato sembra ideale per preparazioni strutturate come la ricetta con crema di broccoletto siciliano, calamari e pomodori semi secchi profumata al limone e carbone d\'olive nere."
  }
  ]';
-
+// decode the jason array
   $data = json_decode($data, true);
-
+// make some empty array
   $lunga = [];
   $corta = [];
   $cortissima = [];
-
+// make a foreach cicle to iterate and find the value
   foreach ($data as $products) {
-    if ($products["tipo"] == $lunga) {
+    if ($products["tipo"] == "lunga") {
       $lunga[] = $products;
-    } else if ($products["tipo"] == $corta) {
+    } else if ($products["tipo"] == "corta") {
       $corta[] = $products;
-    } else {
+    } else if ($products["tipo"] == "cortissima") {
       $cortissima[] = $products;
     }
   }
-
 @endphp
-
+{{-- end php --}}
+{{-- starts html --}}
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
    <meta charset="utf-8">
@@ -151,46 +153,53 @@ $data = '[
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment-with-locales.min.js"></script>
-   <title>laravel-molisana</title>
+   <title>molisana-home</title>
   </head>
+{{-- start body --}}
   <body>
-   <header>
-    <div class="logo">
-     <img src="{{asset('/images/logo_la_molisana.png')}}" alt="logo_la_molisana">
-    </div>
-    <nav class="header-nav">
-     <li><a href="#"></a>Home</li>
-     <li><a href="#"></a>Prodotti</li>
-     <li><a href="#"></a>News</li>
-    </nav>
-   </header>
+{{-- include header --}}
+   @include('partials.header')
    <main>
-     <ul class="wrapper_products">
-      <span class="product_text">Le lunghe</span>
+    <div class="main_wrapper">
+     <h2>Le lunghe</h2>
+     <ul>
+{{-- make a foreach to iterate a specific value from the json array --}}
       @foreach ($lunga as $products)
       <li>
        <img src="{{$products["src"]}}" alt="">
+       <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
+       <p>{{$products["titolo"]}}</p>
       </li>
       @endforeach
      </ul>
-     {{-- <h2>Le corte</h2> --}}
-     <ul class="wrapper_products">
-       @foreach ($corta as $products)
-       <li>
-        <img src="{{$products["src"]}}" alt="">
-       </li>
-       @endforeach
+     <h2>Le corte</h2>
+     <ul>
+{{-- make a foreach to iterate a specific value from the json array --}}
+      @foreach ($corta as $products)
+      <li>
+       <img src="{{$products["src"]}}" alt="">
+       <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
+       <p>{{$products["titolo"]}}</p>
+      </li>
+      @endforeach
      </ul>
-     {{-- <h2>Le cortissime</h2> --}}
-     <ul class="wrapper_products">
-       @foreach ($cortissima as $products)
-       <li>
-        <img src="{{$products["src"]}}" alt="">
-       </li>
-       @endforeach
+     <h2>Le cortissime</h2>
+     <ul>
+{{-- make a foreach to iterate a specific value from the json array --}}
+      @foreach ($cortissima as $products)
+      <li>
+       <img src="{{$products["src"]}}" alt="">
+       <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
+       <p>{{$products["titolo"]}}</p>
+      </li>
+      @endforeach
      </ul>
+     </div>
    </main>
-   <footer>
-   </footer>
+{{-- end main --}}
+{{-- include footer --}}
+    @include('partials.footer')
+{{-- end footer --}}
   </body>
+{{-- end body --}}
 </html>
