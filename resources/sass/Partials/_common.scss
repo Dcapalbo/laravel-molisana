@@ -1,4 +1,24 @@
-// basic style values
+// common style values
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   background-color: red;
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
