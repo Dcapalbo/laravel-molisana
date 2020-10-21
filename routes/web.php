@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
+    $data = config("products");
+    dd($data);
     return view('home');
 });
 
