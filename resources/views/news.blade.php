@@ -1,7 +1,9 @@
 {{-- insert the blade layout template --}}
-@extends('layouts.template')
+@extends('layouts.main')
 {{-- end layout template --}}
-@section('title', 'news')
+@section('title')
+  News
+@endsection
 @section('main_content')
 {{-- start main --}}
   <main>
@@ -9,5 +11,6 @@
     <h2>News</h2>
    </div>
   </main>
+  <script src="{{asset('js/app.js')}}"></script>
 {{-- end main --}}
 @endsection
