@@ -124,6 +124,5 @@ $data = '[
  ]';
 // decode the jason array
   $data = json_decode($data, true);
-
   return $data;
 ?>

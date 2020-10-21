@@ -14,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
-    $data = config("products");
-    dd($data);
+  $data = config('products');
     return view('home');
-});
+})->name("home");
 
 Route::get('/prodotti', function () {
     return view('prodotti');
-});
+})->name("prodotti");
+
+Route::get('/product/show/{id}', function ($id) {
+    return view('product');
+})->name("product");
 
 Route::get('/news', function () {
     return view('news');
-});
+})->name("news");
