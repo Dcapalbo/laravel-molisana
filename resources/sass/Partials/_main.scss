@@ -4,6 +4,7 @@ main {
   background-image: url(/images/fondo-pag-speciali.jpg);
   margin-bottom: 80px;
 }
+// wrapper
 .main_wrapper {
   @include wrapper;
   ul {
@@ -14,6 +15,8 @@ main {
   li {
     @include DisplayFlex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     width: 30%;
     text-align: center;
     position: relative;
@@ -29,9 +32,7 @@ main {
       transition: 1.2s;
     }
     p {
-      margin-top: 150px;
       position: absolute;
-      padding-top: 10px;
       opacity:0;
       transition: 1.2s;
     }
@@ -49,3 +50,33 @@ main {
     }
   }
 }
+.products_wrapper {
+  width: 100%;
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  div {
+    background-color: #B8DAE4;
+  }
+  p {
+    padding: 100px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  h3 {
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 30px;
+    background-color: #B8DAE6;
+    width: 100%;
+  }
+}
+// end main

@@ -73,6 +73,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 30%;
   text-align: center;
   position: relative;
@@ -91,9 +93,7 @@ main {
 }
 
 .main_wrapper li p {
-  margin-top: 150px;
   position: absolute;
-  padding-top: 10px;
   opacity: 0;
   transition: 1.2s;
 }
@@ -112,6 +112,41 @@ main {
 .main_wrapper li:hover p,
 .main_wrapper li:hover .food_logo {
   opacity: 1;
+}
+
+.products_wrapper {
+  width: 100%;
+}
+
+.products_wrapper li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.products_wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.products_wrapper div {
+  background-color: #B8DAE4;
+}
+
+.products_wrapper p {
+  padding: 100px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.products_wrapper h3 {
+  text-align: center;
+  padding: 30px 0px;
+  font-size: 30px;
+  background-color: #B8DAE6;
+  width: 100%;
 }
 
 footer {

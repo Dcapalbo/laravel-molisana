@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
-  $data = config('products');
     return view('home');
 })->name("home");
 
@@ -22,10 +21,14 @@ Route::get('/prodotti', function () {
     return view('prodotti');
 })->name("prodotti");
 
-Route::get('/product/show/{id}', function ($id) {
-    return view('product');
-})->name("product");
-
 Route::get('/news', function () {
     return view('news');
 })->name("news");
+
+Route::get('/prodotti/show/{id}', function ($id) {
+    $data = config("products.$id");
+      if($data == null) {
+        abort(404);
+    }
+    return view('products', ["products" => $data, "id" => $id]);
+})->name("show");

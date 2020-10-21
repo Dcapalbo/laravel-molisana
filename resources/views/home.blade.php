@@ -9,12 +9,13 @@ $data = config('products');
   $cortissima = [];
 // make a foreach cicle to iterate and find the value
   foreach ($data as $key => $products) {
+    $products["id"] = $key;
     if ($products["tipo"] == "lunga") {
-      $lunga[$key] = $products;
+      $lunga[] = $products;
     } else if ($products["tipo"] == "corta") {
-      $corta[$key] = $products;
+      $corta[] = $products;
     } else if ($products["tipo"] == "cortissima") {
-      $cortissima[$key] = $products;
+      $cortissima[] = $products;
     }
   }
 @endphp
@@ -30,10 +31,10 @@ $data = config('products');
      <h2>Le lunghe</h2>
      <ul>
 {{-- make a foreach to iterate a specific value from the json array --}}
-      @foreach ($lunga as $key => $products)
+      @foreach ($lunga as $products)
       <li>
-        <img src="{{$products["src"]}}" alt="">
-        <a href="prodotti/show/{{$key}}"><p>{{$products["titolo"]}}</p></a>
+        <a href="prodotti/show/{{$products["id"]}}"><img src="{{$products["src"]}}" alt=""></a>
+        <p>{{$products["titolo"]}}</p>
         <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
       </li>
       @endforeach
@@ -41,10 +42,10 @@ $data = config('products');
      <h2>Le corte</h2>
      <ul>
 {{-- make a foreach to iterate a specific value from the json array --}}
-      @foreach ($corta as $key => $products)
+      @foreach ($corta as $products)
       <li>
-       <img src="{{$products["src"]}}" alt="">
-       <a href="prodotti/show/{{$key}}"><p>{{$products["titolo"]}}</p></a>
+       <a href="prodotti/show/{{$products["id"]}}"><img src="{{$products["src"]}}" alt=""></a>
+       <p>{{$products["titolo"]}}</p>
        <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
       </li>
       @endforeach
@@ -52,10 +53,10 @@ $data = config('products');
      <h2>Le cortissime</h2>
      <ul>
 {{-- make a foreach to iterate a specific value from the json array --}}
-      @foreach ($cortissima as $key => $products)
+      @foreach ($cortissima as $products)
       <li>
-        <img src="{{$products["src"]}}" alt="">
-        <a href="prodotti/show/{{$key}}"><p>{{$products["titolo"]}}</p></a>
+        <a href="prodotti/show/{{$products["id"]}}"><img src="{{$products["src"]}}" alt=""></a>
+        <p>{{$products["titolo"]}}</p>
         <img class="food_logo" src="{{asset('/images/icon.svg')}}" alt="">
       </li>
       @endforeach
